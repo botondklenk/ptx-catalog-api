@@ -44,7 +44,7 @@ const PublicRoutersV1 = [
     router: dataResourcesPublicRouter,
   },
   {
-    prefix: "/softwaresources",
+    prefix: "/softwareresources",
     router: softwareResourcesPublicRouter,
   },
   {
@@ -79,12 +79,12 @@ const PrivateRoutersV1 = [
     router: serviceOfferingsPrivateRouter,
   },
   {
-    prefix: "/softwaresources",
+    prefix: "/softwareresources",
     router: softwareResourcesPrivateRouter,
   },
 ];
 
-const routersToSetup = [{ prefix: "", routers: PrivateRoutersV1}, {prefix: "", routers: PublicRoutersV1}];
+const routersToSetup = [{ prefix: "/v1", routers: PrivateRoutersV1}, {prefix: "/v1", routers: PublicRoutersV1}];
 
 export const setupRoutes = (app: Application) => {
   routersToSetup.forEach((config: RouterSetup) => {
